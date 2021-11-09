@@ -21,7 +21,7 @@ type User struct {
 }
 
 func InitialMigration() {
-	DB, err := gorm.Open(mysql.Open(DNS), &gorm.Config{})
+	DB, err = gorm.Open(mysql.Open(DNS), &gorm.Config{})
 
 	if err != nil {
 		fmt.Println(err.Error())

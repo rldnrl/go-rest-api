@@ -15,8 +15,8 @@ const DNS = "root:root124@tcp(127.0.0.1:3306)/godb"
 
 type User struct {
 	gorm.Model
-	FirstName string `json:"firstName"`
-	LastName  string `json:"lastName"`
+	FirstName string `json:"firstname"`
+	LastName  string `json:"lastname"`
 	Email     string `json:"email"`
 }
 

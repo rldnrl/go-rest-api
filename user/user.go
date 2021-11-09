@@ -9,9 +9,9 @@ import (
 )
 
 var DB *gorm.DB
-var error error
+var err error
 
-const DNS = "root:admin@tcp(127.0.0.1:3306)/godb?charset=utf8"
+const DNS = "root:root124@tcp(127.0.0.1:3306)/godb"
 
 type User struct {
 	gorm.Model
@@ -52,7 +52,7 @@ func SaveUser(c *fiber.Ctx) error {
 		return c.Status(500).SendString(err.Error())
 	}
 
-	DB.Save(&user)
+	DB.Create(&user)
 	return c.JSON(&user)
 }
 
